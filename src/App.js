@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Create from "./pages/Create";
 import NoUrlMatch from "./pages/NoUrlMatch";
 import Navbar from "./components/Navbar";
+import Wrapper from "./components/PageWrapper";
 import { ThemeProvider } from "styled-components";
 import { createGlobalStyle } from "styled-components";
 
@@ -15,6 +16,11 @@ const theme = {
     smoke: "#C3D0D9",
     slate: "#4B5D6B",
     white: "#FFFFFF",
+  },
+  fontSizes: {
+    button: "16px",
+    header: "20px",
+    small: "12px",
   },
 };
 
@@ -32,36 +38,21 @@ function App() {
       <GlobalStyle />
       <Router>
         <Navbar />
-        <Switch>
-          <Route path='/create'>
-            <Create />
-          </Route>
-          <Route path='/'>
-            <Home />
-          </Route>
-          <Route>
-            <NoUrlMatch />
-          </Route>
-        </Switch>
+        <Wrapper>
+          <Switch>
+            <Route path='/create'>
+              <Create />
+            </Route>
+            <Route path='/'>
+              <Home />
+            </Route>
+            <Route>
+              <NoUrlMatch />
+            </Route>
+          </Switch>
+        </Wrapper>
       </Router>
     </ThemeProvider>
-
-    // <div className='App'>
-    //   <header className='App-header'>
-    //     <img src={logo} className='App-logo' alt='logo' />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className='App-link'
-    //       href='https://reactjs.org'
-    //       target='_blank'
-    //       rel='noopener noreferrer'
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
   );
 }
 

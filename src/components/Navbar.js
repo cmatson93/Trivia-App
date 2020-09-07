@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+
 import Logo from "../components/Logo";
+import StyledLink from "./StyledLink";
 
 const StyledNav = styled.div`
   display: flex;
@@ -15,13 +16,6 @@ const StyledLinks = styled.div`
   flex-grow: 0.3;
   justify-content: space-evenly;
   align-items: center;
-  a {
-    text-decoration: none;
-    color: ${props => props.theme.colors.slate};
-  }
-  a:hover {
-    color: ${props => props.theme.colors.mint};
-  }
 `;
 
 export default function Navbar() {
@@ -29,8 +23,8 @@ export default function Navbar() {
     <StyledNav>
       <Logo />
       <StyledLinks>
-        <Link to='/'>Home</Link>
-        <Link to='/create'>Create</Link>
+        <StyledLink target='/'>Home</StyledLink>
+        <StyledLink target='/create'>Create</StyledLink>
       </StyledLinks>
     </StyledNav>
   );

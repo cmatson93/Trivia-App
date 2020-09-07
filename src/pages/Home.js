@@ -1,5 +1,5 @@
 import React from "react";
-
+import Wrapper from "../components/PageWrapper";
 export default function Home() {
-  return <div>Home</div>;
+  return <Wrapper>Home</Wrapper>;
 }

@@ -5,7 +5,6 @@ import Home from "./pages/Home";
 import Create from "./pages/Create";
 import NoUrlMatch from "./pages/NoUrlMatch";
 import Navbar from "./components/Navbar";
-import Wrapper from "./components/PageWrapper";
 import { ThemeProvider } from "styled-components";
 import { createGlobalStyle } from "styled-components";
 
@@ -38,19 +37,17 @@ function App() {
       <GlobalStyle />
       <Router>
         <Navbar />
-        <Wrapper>
-          <Switch>
-            <Route path='/create'>
-              <Create />
-            </Route>
-            <Route path='/'>
-              <Home />
-            </Route>
-            <Route>
-              <NoUrlMatch />
-            </Route>
-          </Switch>
-        </Wrapper>
+        <Switch>
+          <Route path='/create'>
+            <Create />
+          </Route>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route>
+            <NoUrlMatch />
+          </Route>
+        </Switch>
       </Router>
     </ThemeProvider>
   );

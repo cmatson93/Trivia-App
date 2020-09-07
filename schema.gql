@@ -1,0 +1,30 @@
+# TODO: We need to change questions into an array of question {} with a question AND answer in them. 
+
+type Quiz {
+    id: ID!
+    title: String!
+    author: String!
+    questions: [String!]
+    scores: [Int]
+}
+
+type Query {
+    allQuizes: [Quiz!]
+    quizesByTitle(title: String!): [Quiz!]
+    quizesByAuthor(author: String!): [Quiz!]
+}
+
+
+# Test Query 
+mutation CreateAQuiz {
+  createQuiz(data: {
+    id:1
+    title:"Our First Quiz!"
+    author:"Christina"
+		questions:["What is the answer?"]
+  }) {
+    title
+    author
+    questions
+  }
+}

@@ -1,0 +1,12 @@
+
+[build]
+  functions = "functions-build"
+  # This will be run the site build
+  command = "npm run build"
+  # This is the directory is publishing to netlify's CDN
+  publish = "build"
+  environment = { FAUNADB_SECRET = 'fnAD1LgM4GACDG6bEwtEfmxfUigydSJgOdSy6Y0x', NODE_VERSION = "8.0.1" }
+
+[dev]
+  # Local dev command. A.k.a npm start
+  command = "react-scripts start"

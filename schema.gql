@@ -1,0 +1,43 @@
+# TODO: We need to change questions into an array of question {} with a question AND answer in them. 
+
+type Question {
+  question: String!
+  answer: String!
+  quiz: [Quiz!] @relation
+}
+
+type Quiz {
+    title: String!
+    author: String!
+    questions: [Question!] @relation
+    scores: [Int]
+}
+
+type Query {
+    allQuizes: [Quiz!]
+    quizesByTitle(title: String!): [Quiz!]
+    quizesByAuthor(author: String!): [Quiz!]
+}
+
+# mutation CreateAQuiz {
+#   createQuiz(data:{
+#     title:"Our First Quiz"
+#     author:"Christina"
+#     questions: {
+#       create : [
+#         { question: "What is the first question?", answer: "This is the first answer" }
+#         { question: "What is the second question?", answer: "This is the second answer" }
+#       ]
+#     }
+#   }) {
+#     _id
+#     title
+#     author
+#     questions {
+#       data {
+#         question
+#         answer
+#       }
+#     }
+#   }
+# }

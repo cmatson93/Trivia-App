@@ -7,7 +7,6 @@ import NoUrlMatch from "./pages/NoUrlMatch";
 import Navbar from "./components/Navbar";
 import { ThemeProvider } from "styled-components";
 import { createGlobalStyle } from "styled-components";
-import api from "./utils/api";
 
 const theme = {
   colors: {
@@ -33,21 +32,6 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function App() {
-  useEffect(() => {
-    console.log("process.env.TEST", process.env.REACT_APP_TEST);
-    console.log("process.env.TEST", process.env.REACT_APP_FAUNADB_SECRET);
-    getQuizes();
-  }, []);
-
-  const getQuizes = () => {
-    api
-      .getAll()
-      .then(res => {
-        console.log("res: ", res);
-      })
-      .catch(error => console.log("API Error: ", error));
-  };
-
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />

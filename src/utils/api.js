@@ -13,7 +13,14 @@ const getAll = () => {
   });
 };
 
+const getAllQuestions = () => {
+  return fetch("/.netlify/functions/questions-get-all").then(response => {
+    return response.json();
+  });
+};
+
 export default {
-  createQuiz: createQuiz,
-  getAll: getAll,
+  createQuiz,
+  getAll,
+  getAllQuestions,
 };

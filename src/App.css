@@ -4,3 +4,7 @@
   padding: 0;
   background-color: #b4b9be;
 }
+@font-face {
+  font-family: "GameFont";
+  src: local("GameFont"), url(./fonts/Krungthep.ttf);
+}

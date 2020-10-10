@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import Create from "./pages/Create";
+import Landing from "./pages/Landing";
 import NoUrlMatch from "./pages/NoUrlMatch";
 import Navbar from "./components/Navbar";
 import { ThemeProvider } from "styled-components";
@@ -10,11 +11,12 @@ import { createGlobalStyle } from "styled-components";
 
 const theme = {
   colors: {
-    mint: "#0FC1AF",
-    mintHover: "#0DA99A",
-    smoke: "#C3D0D9",
-    slate: "#4B5D6B",
-    white: "#FFFFFF",
+    blue: "#5EB1BF",
+    lightCyan: "#CDEDF6",
+    orange: "#EF7B45",
+    red: "#d84727",
+    black: "#042a2b",
+    white: "#eff1f3",
   },
   fontSizes: {
     button: "16px",
@@ -27,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: 'Noto Sans JP', sans-serif;
-    background: ${props => props.theme.colors.smoke};
+    background: theme.colors.white;
   }
 `;
 
@@ -36,10 +38,12 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Router>
-        <Navbar />
         <Switch>
           <Route path='/create'>
             <Create />
+          </Route>
+          <Route path='/landing'>
+            <Landing />
           </Route>
           <Route exact path='/'>
             <Home />

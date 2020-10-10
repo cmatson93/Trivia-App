@@ -7,8 +7,8 @@ import StyledLink from "./StyledLink";
 const StyledNav = styled.div`
   display: flex;
   justify-content: space-between;
-  background: ${props => props.theme.colors.white};
   height: 80px;
+  border-bottom: 1px solid ${props => props.theme.colors.red};
 `;
 
 const StyledLinks = styled.div`
@@ -16,6 +16,9 @@ const StyledLinks = styled.div`
   flex-grow: 0.3;
   justify-content: space-evenly;
   align-items: center;
+  a {
+    color: ${props => props.theme.colors.black};
+  }
 `;
 
 export default function Navbar() {
@@ -25,6 +28,7 @@ export default function Navbar() {
       <StyledLinks>
         <StyledLink target='/'>Home</StyledLink>
         <StyledLink target='/create'>Create</StyledLink>
+        <StyledLink target='/landing'>Landing</StyledLink>
       </StyledLinks>
     </StyledNav>
   );

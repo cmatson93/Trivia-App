@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import Create from "./pages/Create";
 import Landing from "./pages/Landing";
 import NoUrlMatch from "./pages/NoUrlMatch";
-import Navbar from "./components/Navbar";
 import { ThemeProvider } from "styled-components";
 import { createGlobalStyle } from "styled-components";
 

@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import LandingHeader from "../components/LandingHeader";
+import Navbar from "../components/Navbar";
 import GameplayPreview from "../components/GameplayPreview";
+import Wrapper from "../components/PageWrapper";
 export default function Landing() {
   const LandingContainer = styled.div`
     height: 100vh;
@@ -15,10 +16,12 @@ export default function Landing() {
   `;
   return (
     <LandingContainer>
-      <LandingHeader />
-      <MainContainer>
-        <GameplayPreview />
-      </MainContainer>
+      <Wrapper>
+        <Navbar />
+        <MainContainer>
+          <GameplayPreview />
+        </MainContainer>
+      </Wrapper>
     </LandingContainer>
   );
 }

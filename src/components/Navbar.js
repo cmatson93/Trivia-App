@@ -31,6 +31,8 @@ const CenterSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 1em;
+  margin-right: 1em;
 `;
 
 export default function Navbar() {

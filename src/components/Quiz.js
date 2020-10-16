@@ -13,11 +13,11 @@ const QuizCard = styled(motion.div)`
   align-items: center;
   flex-direction: column;
 `;
-export default function Quiz({ author, title, key }) {
+export default function Quiz({ author, title }) {
   return (
     <QuizCard
       animate={{ x: 0 }}
-      transition={{ type: "spring", stiffness: 100, damping: 18 }}
+      transition={{ type: "spring", stiffness: 150, damping: 15 }}
       initial={{ x: -800 }}
     >
       <span>{author}</span>

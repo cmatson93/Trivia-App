@@ -9,17 +9,17 @@ exports.handler = (event, context) => {
     secret: process.env.FAUNADB_SECRET,
   });
   return client
-    .query(q.Paginate(q.Match(q.Ref("indexes/allQuizes"))))
+    .query(q.Paginate(q.Match(q.Ref("indexes/allQuestions"))))
     .then(response => {
-      const quizRefs = response.data;
-      console.log("Quiz refs", quizRefs);
-      console.log(`${quizRefs.length} quizes found`);
+      const quesRefs = response.data;
+      console.log("Question refs", quesRefs);
+      console.log(`${quesRefs.length} questions found`);
       // create new query out of quiz refs. http://bit.ly/2LG3MLg
-      const getAllQuizDataQuery = quizRefs.map(ref => {
+      const getAllQuestionsQuery = quesRefs.map(ref => {
         return q.Get(ref);
       });
       // then query the refs
-      return client.query(getAllQuizDataQuery).then(ret => {
+      return client.query(getAllQuestionsQuery).then(ret => {
         return {
           statusCode: 200,
           body: JSON.stringify(ret),
@@ -27,7 +27,7 @@ exports.handler = (event, context) => {
       });
     })
     .catch(error => {
-      console.log("error", error);
+      console.log("ERROR: ", error);
       return {
         statusCode: 400,
         body: JSON.stringify(error),

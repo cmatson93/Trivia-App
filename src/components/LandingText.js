@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { FaAngleRight } from "react-icons/fa";
 
@@ -13,6 +14,7 @@ const Text = styled.span`
   color: ${props => props.theme.colors.black};
   font-family: "GameFont";
   font-weight: 700;
+  text-transform: uppercase;
 `;
 
 export default function LandingText({ children }) {
